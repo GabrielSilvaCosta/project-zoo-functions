@@ -16,5 +16,24 @@ describe('Testes da função HandlerElephants', () => {
       const average = handlerElephants('averageAge');
       expect(average).toBeCloseTo(10.5);
     });
+
+    it('deve retornar uma string "nw" para o argumento "location" ', () => {
+      const loc = handlerElephants('location');
+      expect(loc).toBe('NW');
+    });
+
+    it('deve retornar numero igual ou maior que  "5" para o argumento "popularity" ', () => {
+      const pop = handlerElephants('popularity');
+      expect(pop).toBeGreaterThanOrEqual(5);
+    });
+
+    it('deve retornar um array de dia da semana que não contem  "monday" para o argumento "availability" ', () => {
+      const week = handlerElephants('availability');
+      expect(week).not.toContain('monday');
+    });
+
+    it('deve retornar  "underfined" não passado argumento ', () => {
+      expect(handlerElephants()).toBe(undefined);
+    });
   });
 });
