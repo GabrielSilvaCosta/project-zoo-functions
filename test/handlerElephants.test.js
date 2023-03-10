@@ -32,8 +32,16 @@ describe('Testes da função HandlerElephants', () => {
       expect(week).not.toContain('monday');
     });
 
-    it('deve retornar  "underfined" não passado argumento ', () => {
+    it('deve retornar "underfined" não passado argumento ', () => {
       expect(handlerElephants()).toBe(undefined);
+    });
+
+    it('deve retornar "Parâmetro inválido, é necessário uma string"  passado como argumento "{}" ', () => {
+      expect(handlerElephants({})).toBe('Parâmetro inválido, é necessário uma string');
+    });
+
+    it('deve retornar  "null"  passado uma string não contempla uma funcionalidade ', () => {
+      expect(handlerElephants('string')).toBe(null);
     });
   });
 });
